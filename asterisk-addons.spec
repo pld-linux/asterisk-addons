@@ -1,4 +1,5 @@
 Summary:	Additional modules for Asterisk
+Summary(pl):	Dodatkowe modu³y dla Asteriska
 Name:		asterisk-addons
 Version:	1.0.7
 Release:	0.1
@@ -15,6 +16,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Additional modules for Asterisk which are, for one reason or another,
 not included in the normal base distribution. Many of these modules
 are experimental.
+
+%description -l pl
+Dodatkowe modu³y dla Asteriska które z ró¿nych powodów nie zosta³y 
+w³±czone do g³ównej dystrybucji. Wiele z tych modu³ów jest 
+experymentalnych.
 
 %prep
 %setup -q

@@ -1,3 +1,4 @@
+# TODO: optflags, files
 Summary:	Additional modules for Asterisk
 Summary(pl):	Dodatkowe modu³y dla Asteriska
 Name:		asterisk-addons
@@ -10,6 +11,7 @@ Source0:	ftp://ftp.digium.com/pub/asterisk/%{name}-%{version}.tar.gz
 URL:		http://www.asterisk.org/
 BuildRequires:	asterisk-devel >= 1.0.0
 BuildRequires:	mysql-devel
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -18,9 +20,9 @@ not included in the normal base distribution. Many of these modules
 are experimental.
 
 %description -l pl
-Dodatkowe modu³y dla Asteriska które z ró¿nych powodów nie zosta³y 
-w³±czone do g³ównej dystrybucji. Wiele z tych modu³ów jest 
-experymentalnych.
+Dodatkowe modu³y dla Asteriska, które z ró¿nych powodów nie zosta³y
+w³±czone do g³ównej dystrybucji. Wiele z tych modu³ów jest
+eksperymentalnych.
 
 %prep
 %setup -q

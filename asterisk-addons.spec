@@ -2,7 +2,7 @@
 Summary:	Additional modules for Asterisk
 Summary(pl):	Dodatkowe modu³y dla Asteriska
 Name:		asterisk-addons
-Version:	1.0.7
+Version:	1.2.1
 Release:	0.1
 License:	BSD
 Group:		Applications/System
@@ -26,7 +26,7 @@ eksperymentalnych.
 
 %prep
 %setup -q
-sed -i -e s'#CFLAGS+=-I../asterisk#CFLAGS+=-I/usr/include/asterisk#g' Makefile
+#sed -i -e s'#CFLAGS+=-I../asterisk#CFLAGS+=-I/usr/include/asterisk#g' Makefile
 
 %build
 %{__make} \
@@ -35,11 +35,20 @@ sed -i -e s'#CFLAGS+=-I../asterisk#CFLAGS+=-I/usr/include/asterisk#g' Makefile
 %install
 rm -rf $RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT{/%{_libdir}/asterisk/modules,/%{_sysconfdir}/asterisk}
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install configs/cdr_mysql.conf.sample $RPM_BUILD_ROOT/%{_sysconfdir}/asterisk/cdr_mysql.conf
+install configs/res_mysql.conf.sample $RPM_BUILD_ROOT/%{_sysconfdir}/asterisk/res_mysql.conf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc README doc/cdr_mysql.txt
+%dir %{_sysconfdir}/asterisk
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/asterisk/*.conf
+%attr(755,root,root) %{_libdir}/asterisk/modules/*.so

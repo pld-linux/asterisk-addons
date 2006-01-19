@@ -7,7 +7,7 @@ Release:	0.1
 License:	BSD
 Group:		Applications/System
 Source0:	ftp://ftp.digium.com/pub/asterisk/%{name}-%{version}.tar.gz
-# Source0-md5:	4862b14d78cd1c4079a48c00d35696f9
+# Source0-md5:	28bdfb79835e223cdff8bfa8365d1720
 URL:		http://www.asterisk.org/
 BuildRequires:	asterisk-devel >= 1.0.0
 BuildRequires:	mysql-devel

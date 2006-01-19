@@ -1,9 +1,9 @@
-# TODO: optflags, files
+# TODO:		optflags
 Summary:	Additional modules for Asterisk
 Summary(pl):	Dodatkowe modu³y dla Asteriska
 Name:		asterisk-addons
 Version:	1.2.1
-Release:	0.1
+Release:	0.2
 License:	BSD
 Group:		Applications/System
 Source0:	ftp://ftp.digium.com/pub/asterisk/%{name}-%{version}.tar.gz
@@ -26,11 +26,13 @@ eksperymentalnych.
 
 %prep
 %setup -q
+sed -i -e "s#/usr/lib/#/usr/%{_lib}/#g#" Makefile
 #sed -i -e s'#CFLAGS+=-I../asterisk#CFLAGS+=-I/usr/include/asterisk#g' Makefile
 
 %build
 %{__make} \
-	CC="%{__cc}"
+	CC="%{__cc}" \
+	OPTIMIZE="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -51,4 +53,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc README doc/cdr_mysql.txt
 %dir %{_sysconfdir}/asterisk
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/asterisk/*.conf
+%dir %{_libdir}/asterisk
+%dir %{_libdir}/asterisk/modules
 %attr(755,root,root) %{_libdir}/asterisk/modules/*.so

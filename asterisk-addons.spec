@@ -42,8 +42,8 @@ install -d $RPM_BUILD_ROOT{/%{_libdir}/asterisk/modules,/%{_sysconfdir}/asterisk
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install configs/cdr_mysql.conf.sample $RPM_BUILD_ROOT/%{_sysconfdir}/asterisk/cdr_mysql.conf
-install configs/res_mysql.conf.sample $RPM_BUILD_ROOT/%{_sysconfdir}/asterisk/res_mysql.conf
+install configs/cdr_mysql.conf.sample $RPM_BUILD_ROOT%{_sysconfdir}/asterisk/cdr_mysql.conf
+install configs/res_mysql.conf.sample $RPM_BUILD_ROOT%{_sysconfdir}/asterisk/res_mysql.conf
 
 %clean
 rm -rf $RPM_BUILD_ROOT

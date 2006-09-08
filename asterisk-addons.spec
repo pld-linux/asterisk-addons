@@ -2,12 +2,12 @@
 Summary:	Additional modules for Asterisk
 Summary(pl):	Dodatkowe modu³y dla Asteriska
 Name:		asterisk-addons
-Version:	1.2.2
-Release:	0.1
+Version:	1.2.4
+Release:	1
 License:	BSD
 Group:		Applications/System
 Source0:	ftp://ftp.digium.com/pub/asterisk/%{name}-%{version}.tar.gz
-# Source0-md5:	a22b05117a2f8c8b25d504d0d01f8823
+# Source0-md5:	1a6d641572d35bb22d52c9d074fbfba8
 URL:		http://www.asterisk.org/
 BuildRequires:	asterisk-devel >= 1.0.0
 BuildRequires:	mysql-devel
@@ -27,7 +27,6 @@ eksperymentalnych.
 %prep
 %setup -q
 sed -i -e "s#/usr/lib/#/usr/%{_lib}/#g#" Makefile
-#sed -i -e s'#CFLAGS+=-I../asterisk#CFLAGS+=-I/usr/include/asterisk#g' Makefile
 
 %build
 %{__make} \
@@ -50,7 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README doc/cdr_mysql.txt
+%doc ChangeLog README doc/cdr_mysql.txt
 %dir %{_sysconfdir}/asterisk
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/asterisk/*.conf
 %dir %{_libdir}/asterisk

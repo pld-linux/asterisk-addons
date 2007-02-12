@@ -1,6 +1,6 @@
 # TODO:		optflags
 Summary:	Additional modules for Asterisk
-Summary(pl.UTF-8):   Dodatkowe moduły dla Asteriska
+Summary(pl.UTF-8):	Dodatkowe moduły dla Asteriska
 Name:		asterisk-addons
 Version:	1.4.0
 Release:	1

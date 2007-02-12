@@ -1,6 +1,6 @@
 # TODO:		optflags
 Summary:	Additional modules for Asterisk
-Summary(pl):	Dodatkowe modu硑 dla Asteriska
+Summary(pl.UTF-8):   Dodatkowe modu艂y dla Asteriska
 Name:		asterisk-addons
 Version:	1.4.0
 Release:	1
@@ -19,9 +19,9 @@ Additional modules for Asterisk which are, for one reason or another,
 not included in the normal base distribution. Many of these modules
 are experimental.
 
-%description -l pl
-Dodatkowe modu硑 dla Asteriska, kt髍e z r罂nych powod體 nie zosta硑
-w潮czone do g丑wnej dystrybucji. Wiele z tych modu丑w jest
+%description -l pl.UTF-8
+Dodatkowe modu艂y dla Asteriska, kt贸re z r贸偶nych powod贸w nie zosta艂y
+w艂膮czone do g艂贸wnej dystrybucji. Wiele z tych modu艂贸w jest
 eksperymentalnych.
 
 %prep

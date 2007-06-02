@@ -2,12 +2,12 @@
 Summary:	Additional modules for Asterisk
 Summary(pl.UTF-8):	Dodatkowe moduły dla Asteriska
 Name:		asterisk-addons
-Version:	1.4.0
+Version:	1.4.1
 Release:	1
 License:	BSD
 Group:		Applications/System
 Source0:	ftp://ftp.digium.com/pub/asterisk/%{name}-%{version}.tar.gz
-# Source0-md5:	603de356bc330bf117c765ced6ede746
+# Source0-md5:	e776b23eac9552e3543fba9202dd7c7d
 URL:		http://www.asterisk.org/
 BuildRequires:	asterisk-devel >= 1.4.0
 BuildRequires:	mysql-devel
@@ -26,7 +26,7 @@ eksperymentalnych.
 
 %prep
 %setup -q
-sed -i -e "s#/usr/lib/#/usr/%{_lib}/#g#" Makefile
+sed -i -e "s#/usr/lib/#/usr/%{_lib}/#g#" Makefile asterisk-ooh323c/Makefile.in
 
 %build
 %configure
@@ -37,10 +37,11 @@ sed -i -e "s#/usr/lib/#/usr/%{_lib}/#g#" Makefile
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{/%{_libdir}/asterisk/modules,/%{_sysconfdir}/asterisk}
+install -d $RPM_BUILD_ROOT{%{_libdir}/asterisk/modules,%{_sysconfdir}/asterisk}
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	INSTALLTO=$RPM_BUILD_ROOT%{_libdir}/asterisk/modules
 
 install configs/cdr_mysql.conf.sample $RPM_BUILD_ROOT%{_sysconfdir}/asterisk/cdr_mysql.conf
 install configs/res_mysql.conf.sample $RPM_BUILD_ROOT%{_sysconfdir}/asterisk/res_mysql.conf

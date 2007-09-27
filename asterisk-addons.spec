@@ -2,14 +2,14 @@
 Summary:	Additional modules for Asterisk
 Summary(pl):	Dodatkowe modu³y dla Asteriska
 Name:		asterisk-addons
-Version:	1.2.5
+Version:	1.2.7
 Release:	1
 License:	BSD
 Group:		Applications/System
-Source0:	ftp://ftp.digium.com/pub/asterisk/%{name}-%{version}.tar.gz
-# Source0-md5:	2bc743cb622986873b5fd5be0f013034
+Source0:	http://downloads.digium.com/pub/asterisk/releases/%{name}-%{version}.tar.gz
+# Source0-md5:	aba697fb5a64837d25ed5b67fea70cd5
 URL:		http://www.asterisk.org/
-BuildRequires:	asterisk-devel >= 1.0.0
+BuildRequires:	asterisk-devel >= 1.2.0
 BuildRequires:	mysql-devel
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)

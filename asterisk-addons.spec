@@ -2,12 +2,12 @@
 Summary:	Additional modules for Asterisk
 Summary(pl.UTF-8):	Dodatkowe moduły dla Asteriska
 Name:		asterisk-addons
-Version:	1.4.1
-Release:	2
+Version:	1.4.6
+Release:	1
 License:	BSD
 Group:		Applications/System
-Source0:	ftp://ftp.digium.com/pub/asterisk/%{name}-%{version}.tar.gz
-# Source0-md5:	e776b23eac9552e3543fba9202dd7c7d
+Source0:	http://downloads.digium.com/pub/asterisk/%{name}-%{version}.tar.gz
+# Source0-md5:	e9240dfbcbeca8c60d5f9704d1135e14
 URL:		http://www.asterisk.org/
 BuildRequires:	asterisk-devel >= 1.4.0
 BuildRequires:	mysql-devel
@@ -26,7 +26,6 @@ eksperymentalnych.
 
 %prep
 %setup -q
-sed -i -e "s#/usr/lib/#/usr/%{_lib}/#g#" Makefile asterisk-ooh323c/Makefile.in
 
 %build
 %configure

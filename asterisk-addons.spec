@@ -12,6 +12,7 @@ URL:		http://www.asterisk.org/
 BuildRequires:	asterisk-devel >= 1.6.0
 BuildRequires:	mysql-devel
 BuildRequires:	sed >= 4.0
+Requires:	asterisk
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -51,7 +52,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README doc/cdr_mysql.txt
-%dir %{_sysconfdir}/asterisk
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/asterisk/*.conf
 %dir %{_libdir}/asterisk
 %dir %{_libdir}/asterisk/modules

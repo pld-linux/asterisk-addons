@@ -1,13 +1,16 @@
-# TODO:		optflags
+# TODO:
+# - optflags
+# - unpackaged file: /var/lib/asterisk/documentation/addons-en_US.xml
+#
 Summary:	Additional modules for Asterisk
 Summary(pl.UTF-8):	Dodatkowe moduły dla Asteriska
 Name:		asterisk-addons
-Version:	1.6.2.1
+Version:	1.6.2.2
 Release:	1
 License:	BSD
 Group:		Applications/System
 Source0:	http://downloads.digium.com/pub/asterisk/%{name}-%{version}.tar.gz
-# Source0-md5:	95e33f22f53d58ac95c54d2c8b8d9d76
+# Source0-md5:	cc1967111965a4c5515d1b6be7c16a0a
 URL:		http://www.asterisk.org/
 BuildRequires:	asterisk-devel >= 1.6.0
 BuildRequires:	mysql-devel
